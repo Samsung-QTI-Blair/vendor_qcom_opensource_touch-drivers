@@ -48,6 +48,24 @@ module_entry(
     ]
 )
 
+#define ddk_module() for focaltech_ft8203
+module_entry(
+    name = "focaltech_tp",
+    config_option = "CONFIG_TOUCHSCREEN_FTS",
+    srcs = [
+			"focaltech_touch_spi/focaltech_core.c",
+			"focaltech_touch_spi/focaltech_ex_fun.c",
+			"focaltech_touch_spi/focaltech_ex_mode.c",
+			"focaltech_touch_spi/focaltech_gesture.c",
+			"focaltech_touch_spi/focaltech_esdcheck.c",
+			"focaltech_touch_spi/focaltech_point_report_check.c",
+			"focaltech_touch_spi/focaltech_flash_spi.c",
+			"focaltech_touch_spi/focaltech_spi_v2.c",
+			"focaltech_touch_spi/focaltech_test/focaltech_test.c",
+			"focaltech_touch_spi/focaltech_test/focaltech_test_ini.c",
+			"focaltech_touch_spi/focaltech_test/supported_ic/focaltech_test_ft8203.c"
+    ]
+)
 #define ddk_module() for focaltech_fts
 module_entry(
     name = "focaltech_fts",

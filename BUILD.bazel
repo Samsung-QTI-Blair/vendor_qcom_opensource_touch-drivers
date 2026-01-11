@@ -30,6 +30,16 @@ ddk_headers(
 )
 
 ddk_headers(
+    name = "focaltech_tp_headers",
+    hdrs = glob([
+            "focaltech_touch_spi/*.h",
+            "focaltech_touch_spi/include/firmware/*.h",
+            "focaltech_touch_spi/focaltech_test/*.h"
+        ]
+    )
+)
+
+ddk_headers(
     name = "focaltech_headers",
     hdrs = glob([
             "focaltech_touch/*.h"

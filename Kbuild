@@ -196,6 +196,30 @@ ifeq ($(CONFIG_TOUCHSCREEN_SYNAPTICS_TCM), y)
 
 endif
 
+ifeq ($(CONFIG_TOUCHSCREEN_FTS), y)
+	LINUX_INC += -include $(TOUCH_ROOT)/focaltech_touch_spi/focaltech_common.h
+	LINUX_INC += -include $(TOUCH_ROOT)/focaltech_touch_spi/focaltech_config.h
+	LINUX_INC += -include $(TOUCH_ROOT)/focaltech_touch_spi/focaltech_core.h
+	LINUX_INC += -include $(TOUCH_ROOT)/focaltech_touch_spi/focaltech_flash.h
+	LINUX_INC += -include $(TOUCH_ROOT)/focaltech_touch_spi/focaltech_test/focaltech_test.h
+	LINUX_INC += -include $(TOUCH_ROOT)/focaltech_touch_spi/focaltech_test/focaltech_test_ini.h
+
+	focaltech_tp-y := \
+		./focaltech_touch_spi/focaltech_core.o \
+		./focaltech_touch_spi/focaltech_ex_fun.o \
+		./focaltech_touch_spi/focaltech_ex_mode.o \
+		./focaltech_touch_spi/focaltech_gesture.o \
+		./focaltech_touch_spi/focaltech_esdcheck.o \
+		./focaltech_touch_spi/focaltech_point_report_check.o \
+		./focaltech_touch_spi/focaltech_flash_spi.o \
+		./focaltech_touch_spi/focaltech_spi_v2.o \
+		./focaltech_touch_spi/focaltech_test/focaltech_test.o \
+		./focaltech_touch_spi/focaltech_test/focaltech_test_ini.o \
+		./focaltech_touch_spi/focaltech_test/supported_ic/focaltech_test_ft8203.o
+
+	obj-$(CONFIG_MSM_TOUCH) += focaltech_tp.o
+endif
+
 ifneq ($(CONFIG_ARCH_PINEAPPLE), y)
 	ifeq ($(CONFIG_TOUCHSCREEN_PARADE), y)
 		LINUX_INC += -include $(TOUCH_ROOT)/pt/pt_regs.h
