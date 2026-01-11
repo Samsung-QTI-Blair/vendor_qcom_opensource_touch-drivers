@@ -249,6 +249,41 @@ ifeq ($(CONFIG_TOUCHSCREEN_HIMAX_CHIPSET), y)
 	obj-$(CONFIG_MSM_TOUCH) += himax_mmi.o
 endif
 
+ifeq ($(CONFIG_TOUCHSCREEN_CHIPONE_ICNL9958R), y)
+	LINUX_INC += -include $(TOUCH_ROOT)/chipone_tddi_spi/cts_builtin_firmware.h
+	LINUX_INC += -include $(TOUCH_ROOT)/chipone_tddi_spi/cts_charger_detect.h
+	LINUX_INC += -include $(TOUCH_ROOT)/chipone_tddi_spi/cts_config.h
+	LINUX_INC += -include $(TOUCH_ROOT)/chipone_tddi_spi/cts_core.h
+	LINUX_INC += -include $(TOUCH_ROOT)/chipone_tddi_spi/cts_earjack_detect.h
+	LINUX_INC += -include $(TOUCH_ROOT)/chipone_tddi_spi/cts_firmware.h
+	LINUX_INC += -include $(TOUCH_ROOT)/chipone_tddi_spi/cts_oem.h
+	LINUX_INC += -include $(TOUCH_ROOT)/chipone_tddi_spi/cts_platform.h
+	LINUX_INC += -include $(TOUCH_ROOT)/chipone_tddi_spi/cts_sfctrl.h
+    LINUX_INC += -include $(TOUCH_ROOT)/chipone_tddi_spi/cts_spi_flash.h
+    LINUX_INC += -include $(TOUCH_ROOT)/chipone_tddi_spi/cts_strerror.h
+    LINUX_INC += -include $(TOUCH_ROOT)/chipone_tddi_spi/cts_sysfs.h
+    LINUX_INC += -include $(TOUCH_ROOT)/chipone_tddi_spi/cts_tcs.h
+    LINUX_INC += -include $(TOUCH_ROOT)/chipone_tddi_spi/cts_test.h
+
+	icnl9951r-y += \
+		./chipone_tddi_spi/cts_driver.o \
+		./chipone_tddi_spi/cts_core.o \
+		./chipone_tddi_spi/cts_sfctrlv2.o \
+		./chipone_tddi_spi/cts_spi_flash.o \
+		./chipone_tddi_spi/cts_firmware.o \
+		./chipone_tddi_spi/cts_test.o \
+		./chipone_tddi_spi/cts_charger_detect.o \
+        ./chipone_tddi_spi/cts_earjack_detect.o \
+        ./chipone_tddi_spi/cts_tcs.o \
+        ./chipone_tddi_spi/cts_platform.o \
+        ./chipone_tddi_spi/cts_tool.o \
+        ./chipone_tddi_spi/cts_sysfs.o \
+        ./chipone_tddi_spi/cts_strerror.o \
+        ./chipone_tddi_spi/cts_oem.o
+
+	obj-$(CONFIG_MSM_TOUCH) += icnl9951r.o
+endif
+
 ifneq ($(CONFIG_ARCH_PINEAPPLE), y)
 	ifeq ($(CONFIG_TOUCHSCREEN_PARADE), y)
 		LINUX_INC += -include $(TOUCH_ROOT)/pt/pt_regs.h

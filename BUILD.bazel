@@ -48,6 +48,14 @@ ddk_headers(
 )
 
 ddk_headers(
+    name = "icnl9951r_headers",
+    hdrs = glob([
+            "chipone_tddi_spi/*.h"
+        ]
+    )
+)
+
+ddk_headers(
     name = "focaltech_headers",
     hdrs = glob([
             "focaltech_touch/*.h"

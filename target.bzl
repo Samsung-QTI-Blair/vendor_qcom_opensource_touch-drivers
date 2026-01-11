@@ -42,6 +42,7 @@ def define_blair(t,v):
             "focaltech_tp",
             "sec_command",
             "himax_mmi",
+            "icnl9951r",
         ],
         config_options = [
             "TOUCH_DLKM_ENABLE",
@@ -55,6 +56,7 @@ def define_blair(t,v):
             "CONFIG_TOUCHSCREEN_FTS",
             "CONFIG_SEC_CMD",
             "CONFIG_TOUCHSCREEN_HIMAX_CHIPSET",
+            "CONFIG_TOUCHSCREEN_CHIPONE_ICNL9958R",
         ],
 )
 

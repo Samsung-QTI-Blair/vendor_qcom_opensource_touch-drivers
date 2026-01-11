@@ -91,6 +91,28 @@ module_entry(
     ]
 )
 
+#define ddk_module() for chipone_icnl9951r
+module_entry(
+    name = "icnl9951r",
+    config_option = "CONFIG_TOUCHSCREEN_CHIPONE_ICNL9958R",
+    srcs = [
+            "chipone_tddi_spi/cts_driver.c",
+            "chipone_tddi_spi/cts_core.c",
+            "chipone_tddi_spi/cts_sfctrlv2.c",
+            "chipone_tddi_spi/cts_spi_flash.c",
+            "chipone_tddi_spi/cts_firmware.c",
+            "chipone_tddi_spi/cts_test.c",
+            "chipone_tddi_spi/cts_charger_detect.c",
+            "chipone_tddi_spi/cts_earjack_detect.c",
+            "chipone_tddi_spi/cts_tcs.c",
+            "chipone_tddi_spi/cts_platform.c",
+            "chipone_tddi_spi/cts_tool.c",
+            "chipone_tddi_spi/cts_sysfs.c",
+            "chipone_tddi_spi/cts_strerror.c",
+            "chipone_tddi_spi/cts_oem.c"
+    ]
+)
+
 #define ddk_module() for focaltech_fts
 module_entry(
     name = "focaltech_fts",

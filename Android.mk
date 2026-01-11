@@ -263,6 +263,8 @@ else ifeq ($(TARGET_BOARD_PLATFORM), blair)
        LOCAL_SRC_FILES   := $(wildcard $(LOCAL_PATH)/**/*) $(wildcard $(LOCAL_PATH)/*)
        LOCAL_MODULE              := goodix_ts.ko
        LOCAL_MODULE_KBUILD_NAME  := goodix_ts.ko
+       LOCAL_MODULE              := icnl9951r.ko
+       LOCAL_MODULE_KBUILD_NAME  := icnl9951r.ko
        LOCAL_MODULE_TAGS         := optional
        #LOCAL_MODULE_DEBUG_ENABLE := true
        LOCAL_MODULE_PATH         := $(KERNEL_MODULES_OUT)
