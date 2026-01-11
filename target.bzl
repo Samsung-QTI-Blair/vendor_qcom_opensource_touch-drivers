@@ -41,6 +41,7 @@ def define_blair(t,v):
             "qts"
             "focaltech_tp",
             "sec_command",
+            "himax_mmi",
         ],
         config_options = [
             "TOUCH_DLKM_ENABLE",
@@ -53,6 +54,7 @@ def define_blair(t,v):
             "CONFIG_QTS_ENABLE"
             "CONFIG_TOUCHSCREEN_FTS",
             "CONFIG_SEC_CMD",
+            "CONFIG_TOUCHSCREEN_HIMAX_CHIPSET",
         ],
 )
 

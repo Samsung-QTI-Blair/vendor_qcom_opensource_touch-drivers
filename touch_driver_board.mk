@@ -34,6 +34,7 @@ ifeq ($(TOUCH_DLKM_ENABLE),  true)
                                         $(KERNEL_MODULES_OUT)/qts.ko
                                 BOARD_VENDOR_KERNEL_MODULES += $(KERNEL_MODULES_OUT)/focaltech_tp.ko \
                                        $(KERNEL_MODULES_OUT)/sec_command.ko \
+                                       $(KERNEL_MODULES_OUT)/himax_mmi.ko \
                         else ifeq ($(TARGET_BOARD_PLATFORM), crow)
                                 BOARD_VENDOR_KERNEL_MODULES += $(KERNEL_MODULES_OUT)/goodix_ts.ko \
                                         $(KERNEL_MODULES_OUT)/qts.ko

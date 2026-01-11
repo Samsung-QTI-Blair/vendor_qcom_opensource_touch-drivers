@@ -250,6 +250,8 @@ else ifeq ($(TARGET_BOARD_PLATFORM), blair)
        LOCAL_SRC_FILES   := $(wildcard $(LOCAL_PATH)/**/*) $(wildcard $(LOCAL_PATH)/*)
        LOCAL_MODULE              := synaptics_tcm_ts.ko
        LOCAL_MODULE_KBUILD_NAME  := synaptics_tcm_ts.ko
+       LOCAL_MODULE              := himax_mmi.ko
+       LOCAL_MODULE_KBUILD_NAME  := himax_mmi.ko
        LOCAL_MODULE_TAGS         := optional
        #LOCAL_MODULE_DEBUG_ENABLE := true
        LOCAL_MODULE_PATH         := $(KERNEL_MODULES_OUT)

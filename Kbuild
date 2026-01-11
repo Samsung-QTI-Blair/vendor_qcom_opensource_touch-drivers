@@ -226,6 +226,29 @@ ifeq ($(CONFIG_TOUCHSCREEN_FTS), y)
 	obj-$(CONFIG_MSM_TOUCH) += focaltech_tp.o
 endif
 
+ifeq ($(CONFIG_TOUCHSCREEN_HIMAX_CHIPSET), y)
+	LINUX_INC += -include $(TOUCH_ROOT)/himax_hx83102j_spi/himax_common.h
+	LINUX_INC += -include $(TOUCH_ROOT)/himax_hx83102j_spi/himax_debug.h
+	LINUX_INC += -include $(TOUCH_ROOT)/himax_hx83102j_spi/himax_debug_info.h
+	LINUX_INC += -include $(TOUCH_ROOT)/himax_hx83102j_spi/himax_firmware.h
+	LINUX_INC += -include $(TOUCH_ROOT)/himax_hx83102j_spi/himax_ic_core.h
+	LINUX_INC += -include $(TOUCH_ROOT)/himax_hx83102j_spi/himax_ic_HX83102j.h
+	LINUX_INC += -include $(TOUCH_ROOT)/himax_hx83102j_spi/himax_inspection.h
+	LINUX_INC += -include $(TOUCH_ROOT)/himax_hx83102j_spi/himax_modular.h
+	LINUX_INC += -include $(TOUCH_ROOT)/himax_hx83102j_spi/himax_platform.h
+
+	himax_mmi-y += \
+		./himax_hx83102j_spi/himax_debug.o \
+		./himax_hx83102j_spi/himax_inspection.o \
+		./himax_hx83102j_spi/himax_ic_HX83102j.o \
+		./himax_hx83102j_spi/himax_ic_core.o \
+		./himax_hx83102j_spi/himax_common.o \
+		./himax_hx83102j_spi/himax_platform.o \
+		./himax_hx83102j_spi/himax_firmware.o
+
+	obj-$(CONFIG_MSM_TOUCH) += himax_mmi.o
+endif
+
 ifneq ($(CONFIG_ARCH_PINEAPPLE), y)
 	ifeq ($(CONFIG_TOUCHSCREEN_PARADE), y)
 		LINUX_INC += -include $(TOUCH_ROOT)/pt/pt_regs.h

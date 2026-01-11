@@ -76,6 +76,21 @@ module_entry(
     ]
 )
 
+#define ddk_module() for himax_hx83102j
+module_entry(
+    name = "himax_mmi",
+    config_option = "CONFIG_TOUCHSCREEN_HIMAX_CHIPSET",
+    srcs = [
+            "himax_hx83102j_spi/himax_debug.c",
+            "himax_hx83102j_spi/himax_inspection.c",
+            "himax_hx83102j_spi/himax_ic_HX83102j.c",
+            "himax_hx83102j_spi/himax_ic_core.c",
+            "himax_hx83102j_spi/himax_common.c",
+            "himax_hx83102j_spi/himax_platform.c",
+            "himax_hx83102j_spi/himax_firmware.c"
+    ]
+)
+
 #define ddk_module() for focaltech_fts
 module_entry(
     name = "focaltech_fts",
