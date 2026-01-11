@@ -113,6 +113,20 @@ module_entry(
     ]
 )
 
+#define ddk_module() for jadard_jd9366ts
+module_entry(
+    name = "jadard_touch",
+    config_option = "CONFIG_TOUCHSCREEN_JADARD_CHIPSET",
+    srcs = [
+            "jdchipset/jadard_module.c",
+            "jdchipset/jadard_ic_JD9366TP.c",
+            "jdchipset/jadard_common.c",
+            "jdchipset/jadard_platform.c",
+            "jdchipset/jadard_debug.c",
+            "jdchipset/jadard_sorting.c"
+    ]
+)
+
 #define ddk_module() for focaltech_fts
 module_entry(
     name = "focaltech_fts",

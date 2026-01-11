@@ -34,29 +34,21 @@ def define_blair(t,v):
         variant = v,
         registry = touch_driver_modules,
         modules = [
-            "nt36xxx-i2c",
-            "goodix_ts",
-            "focaltech_fts",
-            "synaptics_tcm_ts",
-            "qts"
             "focaltech_tp",
             "sec_command",
             "himax_mmi",
             "icnl9951r",
+            "jadard_touch"
         ],
         config_options = [
             "TOUCH_DLKM_ENABLE",
             "CONFIG_ARCH_BLAIR",
             "CONFIG_MSM_TOUCH",
-            "CONFIG_TOUCHSCREEN_NT36XXX_I2C",
-            "CONFIG_TOUCHSCREEN_GOODIX_BRL",
-            "CONFIG_TOUCH_FOCALTECH",
-            "CONFIG_TOUCHSCREEN_SYNAPTICS_TCM",
-            "CONFIG_QTS_ENABLE"
             "CONFIG_TOUCHSCREEN_FTS",
             "CONFIG_SEC_CMD",
             "CONFIG_TOUCHSCREEN_HIMAX_CHIPSET",
             "CONFIG_TOUCHSCREEN_CHIPONE_ICNL9958R",
+            "CONFIG_TOUCHSCREEN_JADARD_CHIPSET"
         ],
 )
 

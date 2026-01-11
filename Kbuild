@@ -284,6 +284,25 @@ ifeq ($(CONFIG_TOUCHSCREEN_CHIPONE_ICNL9958R), y)
 	obj-$(CONFIG_MSM_TOUCH) += icnl9951r.o
 endif
 
+ifeq ($(CONFIG_TOUCHSCREEN_JADARD_CHIPSET), y)
+	LINUX_INC += -include $(TOUCH_ROOT)/jdchipset/jadard_module.h
+	LINUX_INC += -include $(TOUCH_ROOT)/jdchipset/jadard_ic_JD9366TP.h
+	LINUX_INC += -include $(TOUCH_ROOT)/jdchipset/jadard_common.h
+	LINUX_INC += -include $(TOUCH_ROOT)/jdchipset/jadard_platform.h
+	LINUX_INC += -include $(TOUCH_ROOT)/jdchipset/jadard_debug.h
+	LINUX_INC += -include $(TOUCH_ROOT)/jdchipset/jadard_sorting.h
+
+	jadard_touch-y += \
+		./jdchipset/jadard_module.o \
+		./jdchipset/jadard_ic_JD9366TP.o \
+		./jdchipset/jadard_common.o \
+		./jdchipset/jadard_platform.o \
+		./jdchipset/jadard_debug.o \
+		./jdchipset/jadard_sorting.o
+
+	obj-$(CONFIG_MSM_TOUCH) += jadard_touch.o
+endif
+
 ifneq ($(CONFIG_ARCH_PINEAPPLE), y)
 	ifeq ($(CONFIG_TOUCHSCREEN_PARADE), y)
 		LINUX_INC += -include $(TOUCH_ROOT)/pt/pt_regs.h
