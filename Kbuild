@@ -196,6 +196,12 @@ ifeq ($(CONFIG_TOUCHSCREEN_SYNAPTICS_TCM), y)
 
 endif
 
+ifeq ($(CONFIG_SEC_CMD), y)
+	sec_command-y += ./sec_command/sec_cmd.o
+
+	obj-$(CONFIG_MSM_TOUCH) += sec_command.o
+endif
+
 ifeq ($(CONFIG_TOUCHSCREEN_FTS), y)
 	LINUX_INC += -include $(TOUCH_ROOT)/focaltech_touch_spi/focaltech_common.h
 	LINUX_INC += -include $(TOUCH_ROOT)/focaltech_touch_spi/focaltech_config.h

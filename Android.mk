@@ -237,6 +237,8 @@ else ifeq ($(TARGET_BOARD_PLATFORM), blair)
        LOCAL_SRC_FILES   := $(wildcard $(LOCAL_PATH)/**/*) $(wildcard $(LOCAL_PATH)/*)
        LOCAL_MODULE              := nt36xxx-i2c.ko
        LOCAL_MODULE_KBUILD_NAME  := nt36xxx-i2c.ko
+       LOCAL_MODULE              := sec_command.ko
+       LOCAL_MODULE_KBUILD_NAME  := sec_command.ko
        LOCAL_MODULE_TAGS         := optional
        #LOCAL_MODULE_DEBUG_ENABLE := true
        LOCAL_MODULE_PATH         := $(KERNEL_MODULES_OUT)

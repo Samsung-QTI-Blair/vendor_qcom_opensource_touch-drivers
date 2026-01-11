@@ -66,6 +66,16 @@ module_entry(
 			"focaltech_touch_spi/focaltech_test/supported_ic/focaltech_test_ft8203.c"
     ]
 )
+
+#define ddk_module() for sec_cmd
+module_entry(
+    name = "sec_command",
+    config_option = "CONFIG_SEC_CMD",
+    srcs = [
+            "sec_command/sec_cmd.c"
+    ]
+)
+
 #define ddk_module() for focaltech_fts
 module_entry(
     name = "focaltech_fts",

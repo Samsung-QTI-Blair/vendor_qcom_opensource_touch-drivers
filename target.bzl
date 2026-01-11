@@ -40,6 +40,7 @@ def define_blair(t,v):
             "synaptics_tcm_ts",
             "qts"
             "focaltech_tp",
+            "sec_command",
         ],
         config_options = [
             "TOUCH_DLKM_ENABLE",
@@ -51,6 +52,7 @@ def define_blair(t,v):
             "CONFIG_TOUCHSCREEN_SYNAPTICS_TCM",
             "CONFIG_QTS_ENABLE"
             "CONFIG_TOUCHSCREEN_FTS",
+            "CONFIG_SEC_CMD",
         ],
 )
 
