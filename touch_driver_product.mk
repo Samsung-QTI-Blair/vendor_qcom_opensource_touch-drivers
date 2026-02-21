@@ -7,51 +7,51 @@ endif
 
 ifeq ($(TOUCH_DLKM_ENABLE),  true)
         ifeq ($(TARGET_BOARD_PLATFORM), monaco)
-                PRODUCT_PACKAGES += $(KERNEL_MODULES_OUT)/pt_ts.ko \
-                        $(KERNEL_MODULES_OUT)/pt_i2c.ko \
-                        $(KERNEL_MODULES_OUT)/pt_device_access.ko \
-			 $(KERNEL_MODULES_OUT)/glink_comm.ko \
-                        $(KERNEL_MODULES_OUT)/raydium_ts.ko
+                PRODUCT_PACKAGES += pt_ts.ko \
+                        pt_i2c.ko \
+                        pt_device_access.ko \
+			 glink_comm.ko \
+                        raydium_ts.ko
         else ifeq ($(TARGET_BOARD_PLATFORM), kona)
-                PRODUCT_PACKAGES += $(KERNEL_MODULES_OUT)/focaltech_fts.ko
+                PRODUCT_PACKAGES += focaltech_fts.ko
         else ifeq ($(TARGET_BOARD_PLATFORM), pineapple)
-                PRODUCT_PACKAGES += $(KERNEL_MODULES_OUT)/nt36xxx-i2c.ko \
-                        $(KERNEL_MODULES_OUT)/goodix_ts.ko \
-                        $(KERNEL_MODULES_OUT)/atmel_mxt_ts.ko \
-                        $(KERNEL_MODULES_OUT)/qts.ko
+                PRODUCT_PACKAGES += nt36xxx-i2c.ko \
+                        goodix_ts.ko \
+                        atmel_mxt_ts.ko \
+                        qts.ko
         else ifeq ($(TARGET_BOARD_PLATFORM), kalama)
-                PRODUCT_PACKAGES += $(KERNEL_MODULES_OUT)/nt36xxx-i2c.ko \
-                        $(KERNEL_MODULES_OUT)/goodix_ts.ko \
-                        $(KERNEL_MODULES_OUT)/atmel_mxt_ts.ko \
-                        $(KERNEL_MODULES_OUT)/qts.ko
+                PRODUCT_PACKAGES += nt36xxx-i2c.ko \
+                        goodix_ts.ko \
+                        atmel_mxt_ts.ko \
+                        qts.ko
         else ifeq ($(TARGET_BOARD_PLATFORM), blair)
-                PRODUCT_PACKAGES += $(KERNEL_MODULES_OUT)/focaltech_tp.ko \
-                        $(KERNEL_MODULES_OUT)/sec_command.ko \
-                        $(KERNEL_MODULES_OUT)/himax_mmi.ko \
-                        $(KERNEL_MODULES_OUT)/icnl9951r.ko \
-                        $(KERNEL_MODULES_OUT)/jadard_touch.ko
+                PRODUCT_PACKAGES += focaltech_tp.ko \
+                        sec_command.ko \
+                        himax_mmi.ko \
+                        icnl9951r.ko \
+                        jadard_touch.ko
         else ifeq ($(TARGET_BOARD_PLATFORM), crow)
-                PRODUCT_PACKAGES += $(KERNEL_MODULES_OUT)/goodix_ts.ko \
-                        $(KERNEL_MODULES_OUT)/qts.ko
+                PRODUCT_PACKAGES += goodix_ts.ko \
+                        qts.ko
         else ifeq ($(TARGET_BOARD_PLATFORM), bengal)
-                PRODUCT_PACKAGES += $(KERNEL_MODULES_OUT)/synaptics_tcm_ts.ko \
-                        $(KERNEL_MODULES_OUT)/nt36xxx-i2c.ko \
-			$(KERNEL_MODULES_OUT)/focaltech_fts.ko
+                PRODUCT_PACKAGES += synaptics_tcm_ts.ko \
+                        nt36xxx-i2c.ko \
+			focaltech_fts.ko
         else ifeq ($(TARGET_BOARD_PLATFORM), trinket)
-                PRODUCT_PACKAGES += $(KERNEL_MODULES_OUT)/synaptics_tcm_ts.ko
+                PRODUCT_PACKAGES += synaptics_tcm_ts.ko
         else ifeq ($(TARGET_BOARD_PLATFORM), pitti)
-                PRODUCT_PACKAGES += $(KERNEL_MODULES_OUT)/focaltech_fts.ko \
-                        $(KERNEL_MODULES_OUT)/goodix_ts.ko \
-                        $(KERNEL_MODULES_OUT)/qts.ko
+                PRODUCT_PACKAGES += focaltech_fts.ko \
+                        goodix_ts.ko \
+                        qts.ko
         else ifeq ($(TARGET_BOARD_PLATFORM), volcano)
-                PRODUCT_PACKAGES += $(KERNEL_MODULES_OUT)/goodix_ts.ko \
-                        $(KERNEL_MODULES_OUT)/focaltech_fts.ko \
-		        $(KERNEL_MODULES_OUT)/qts.ko
+                PRODUCT_PACKAGES += goodix_ts.ko \
+                        focaltech_fts.ko \
+		        qts.ko
         else
-                PRODUCT_PACKAGES += $(KERNEL_MODULES_OUT)/nt36xxx-i2c.ko \
-                        $(KERNEL_MODULES_OUT)/goodix_ts.ko \
-                        $(KERNEL_MODULES_OUT)/atmel_mxt_ts.ko \
-                        $(KERNEL_MODULES_OUT)/synaptics_tcm_ts.ko \
-                        $(KERNEL_MODULES_OUT)/qts.ko
+                PRODUCT_PACKAGES += nt36xxx-i2c.ko \
+                        goodix_ts.ko \
+                        atmel_mxt_ts.ko \
+                        synaptics_tcm_ts.ko \
+                        qts.ko
         endif
 endif
